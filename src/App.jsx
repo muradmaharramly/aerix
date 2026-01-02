@@ -13,6 +13,7 @@ import WeatherHighlights from './components/WeatherHighlights';
 import WeatherChart from './components/WeatherChart';
 import ForecastList from './components/ForecastList';
 import FilterBar from './components/FilterBar';
+import UnitToggle from './components/UnitToggle';
 import logo from './assets/images/aerix-logo.png';
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
       <header className="app-header">
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', flexWrap: 'wrap' }}>
           <img src={logo} alt="Aerix" style={{ height: '70px', objectFit: 'contain' }} />
+          <UnitToggle />
         </div>
       </header>
 

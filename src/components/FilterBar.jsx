@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleUnits, setWeatherTypeFilter, setTempRangeFilter } from '../store/uiSlice';
+import { setWeatherTypeFilter, setTempRangeFilter } from '../store/uiSlice';
 import CustomSelect from './CustomSelect';
 import CitySearch from './CitySearch';
 
@@ -32,14 +32,6 @@ const FilterBar = () => {
       </div>
 
       <div style={styles.controlsContainer}>
-        <button 
-          className="btn" 
-          onClick={() => dispatch(toggleUnits())}
-          style={styles.unitBtn}
-        >
-          Units: {units === 'metric' ? '°C' : '°F'}
-        </button>
-
         <div className="filters-group" style={styles.group}>
           <CustomSelect 
             label="Type" 
