@@ -1,0 +1,37 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.btn {
+  @include glass;
+  padding: $spacing-sm $spacing-md;
+  color: $text-primary;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  outline: none;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &--primary {
+    background: rgba($primary-color, 0.5);
+    &:hover {
+      background: rgba($primary-color, 0.7);
+    }
+  }
+
+  &--icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $spacing-sm;
+    border-radius: 50%;
+  }
+}

@@ -1,0 +1,29 @@
+// Colors
+$primary-color: #71B280;
+$accent-color: #134E5E;
+$text-primary: #ffffff;
+$text-secondary: rgba(255, 255, 255, 0.9);
+$bg-gradient: linear-gradient(135deg, #134E5E 0%, #71B280 100%); // Deep Teal to Soft Green
+
+// Glassmorphism
+$glass-bg: rgba(255, 255, 255, 0.15);
+$glass-border: rgba(255, 255, 255, 0.3);
+$glass-shadow: 0 8px 32px 0 rgba(19, 78, 94, 0.37);
+$glass-blur: 10px;
+
+// Spacing
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+
+// Border Radius
+$radius-sm: 8px;
+$radius-md: 16px;
+$radius-lg: 24px;
+
+// Breakpoints
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1024px;

@@ -1,0 +1,25 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.card {
+  @include glass;
+  padding: $spacing-lg;
+  color: $text-primary;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  &__header {
+    margin-bottom: $spacing-md;
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+  }
+
+  &__body {
+    // Body styles
+  }
+}

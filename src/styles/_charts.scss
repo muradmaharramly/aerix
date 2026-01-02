@@ -1,0 +1,58 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.weather-chart {
+  @include glass;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-xl;
+  height: 350px;
+  width: 100%;
+  
+  &__header {
+    margin-bottom: $spacing-md;
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: $text-primary;
+    }
+  }
+
+  // Recharts custom overrides
+  .recharts-cartesian-grid-horizontal line,
+  .recharts-cartesian-grid-vertical line {
+    stroke: rgba(255, 255, 255, 0.1);
+  }
+
+  .recharts-text {
+    fill: $text-secondary !important;
+    font-size: 0.8rem;
+  }
+  
+  .recharts-tooltip-cursor {
+    stroke: rgba(255, 255, 255, 0.2);
+  }
+}
+
+.custom-tooltip {
+  @include glass;
+  padding: $spacing-sm $spacing-md;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(15, 32, 39, 0.8) !important; // Darker background for readability
+  
+  p {
+    margin: 0;
+    font-size: 0.9rem;
+    
+    &.time {
+      color: $text-secondary;
+      font-size: 0.8rem;
+      margin-bottom: 5px;
+    }
+    
+    &.temp {
+      font-weight: 700;
+      color: $accent-color;
+      font-size: 1.1rem;
+    }
+  }
+}
