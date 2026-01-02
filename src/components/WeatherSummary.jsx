@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { useSelector } from 'react-redux';
 import { getWeatherIcon, getWeatherDescription } from '../utils/weatherUtils';
-import Earth3D from './Earth3D';
+import { WiThermometer, WiHumidity, WiStrongWind } from 'react-icons/wi';
+
+// Lazy load Earth3D to prevent bundle issues and show loading state
+const Earth3D = React.lazy(() => import('./Earth3D'));
 
 const WeatherSummary = () => {
   const { current, locationCoords } = useSelector((state) => state.weather);
@@ -20,12 +23,11 @@ const WeatherSummary = () => {
 
   // Map logic
   const renderMap = () => {
-    // Return Earth3D even if coords aren't loaded yet (it handles null coords gracefully)
-    // But logically we want to show it when we have a location or just always show the globe?
-    // Always showing the globe is better UI.
     return (
       <div className="weather-summary-map-container">
-        <Earth3D />
+        <Suspense fallback={<div className="map-loading">Loading Globe...</div>}>
+          <Earth3D />
+        </Suspense>
       </div>
     );
   };
