@@ -7,5 +7,14 @@ export default defineConfig({
   base: '/',
   build: {
     chunkSizeWarningLimit: 1000,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-redux', '@reduxjs/toolkit'],
+          globe: ['react-globe.gl', 'three'],
+          ui: ['react-icons', 'react-spinners', 'react-toastify', 'recharts']
+        }
+      }
+    }
   }
 })
