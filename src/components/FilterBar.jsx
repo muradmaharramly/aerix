@@ -34,14 +34,12 @@ const FilterBar = () => {
       <div style={styles.controlsContainer}>
         <div className="filters-group" style={styles.group}>
           <CustomSelect 
-            label="Type" 
             options={weatherOptions} 
             value={filter.weatherType} 
             onChange={(val) => dispatch(setWeatherTypeFilter(val))} 
           />
           
           <CustomSelect 
-            label="Temp" 
             options={tempOptions} 
             value={filter.tempRange} 
             onChange={(val) => dispatch(setTempRangeFilter(val))} 

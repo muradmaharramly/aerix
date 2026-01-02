@@ -28,7 +28,7 @@ const CustomSelect = ({ label, options, value, onChange }) => {
 
   return (
     <div className="custom-select-wrapper" style={styles.wrapper} ref={dropdownRef}>
-      <label style={styles.label}>{label}:</label>
+      {label && <label style={styles.label}>{label}:</label>}
       <div style={{ position: 'relative' }}>
         <div 
           style={{...styles.selectDisplay, ...(isOpen ? styles.selectDisplayOpen : {})}}
