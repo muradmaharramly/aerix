@@ -525,7 +525,16 @@ body {
 
 .city-search-input {
   &::placeholder {
-    color: rgba(255, 255, 255, 0.9) !important;
+    color: rgba(255, 255, 255, 0.9) !important;  
     opacity: 1;
+  }
+}
+
+// Custom Select Mobile Override
+.custom-select-display {
+  @include responsive(mobile) {
+    padding: 8px 12px !important;
+    min-width: 120px !important;
+    font-size: 0.85rem !important;
   }
 }

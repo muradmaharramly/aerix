@@ -31,6 +31,7 @@ const CustomSelect = ({ label, options, value, onChange }) => {
       {label && <label style={styles.label}>{label}:</label>}
       <div style={{ position: 'relative' }}>
         <div 
+          className="custom-select-display"
           style={{...styles.selectDisplay, ...(isOpen ? styles.selectDisplayOpen : {})}}
           onClick={() => setIsOpen(!isOpen)}
         >
