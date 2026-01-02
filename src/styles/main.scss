@@ -442,6 +442,16 @@ body {
     gap: 16px;
     align-items: center;
     flex-wrap: wrap;
+
+    @include responsive(mobile) {
+      justify-content: center !important;
+      width: 100%;
+      margin-top: 10px;
+      
+      .filters-group {
+        justify-content: center !important;
+      }
+    }
 }
 
 .custom-select-container {

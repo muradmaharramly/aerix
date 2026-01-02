@@ -31,7 +31,7 @@ const FilterBar = () => {
         <CitySearch />
       </div>
 
-      <div style={styles.controlsContainer}>
+      <div className="controls-container" style={styles.controlsContainer}>
         <div className="filters-group" style={styles.group}>
           <CustomSelect 
             options={weatherOptions} 
