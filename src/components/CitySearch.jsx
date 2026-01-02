@@ -137,7 +137,6 @@ const CitySearch = () => {
 const styles = {
   container: {
     position: 'relative',
-    marginBottom: '30px',
     zIndex: 1000,
   },
   searchBox: {

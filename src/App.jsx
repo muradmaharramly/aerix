@@ -48,11 +48,10 @@ function App() {
   return (
     <div className="container">
       <header className="app-header">
-        <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', flexWrap: 'wrap' }}>
           <img src={logo} alt="Aerix" style={{ height: '70px', objectFit: 'contain' }} />
           <UnitToggle />
         </div>
-        <CitySearch />
       </header>
 
       <main>

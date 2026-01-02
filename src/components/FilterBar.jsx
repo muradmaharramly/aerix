@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleUnits, setWeatherTypeFilter, setTempRangeFilter } from '../store/uiSlice';
 import CustomSelect from './CustomSelect';
+import CitySearch from './CitySearch';
 
 const FilterBar = () => {
   const dispatch = useDispatch();
@@ -26,28 +27,34 @@ const FilterBar = () => {
 
   return (
     <div className="filter-bar" style={styles.container}>
-      <button 
-        className="btn" 
-        onClick={() => dispatch(toggleUnits())}
-        style={styles.unitBtn}
-      >
-        Units: {units === 'metric' ? '°C' : '°F'}
-      </button>
+      <div style={styles.searchContainer}>
+        <CitySearch />
+      </div>
 
-      <div className="filters-group" style={styles.group}>
-        <CustomSelect 
-          label="Type" 
-          options={weatherOptions} 
-          value={filter.weatherType} 
-          onChange={(val) => dispatch(setWeatherTypeFilter(val))} 
-        />
-        
-        <CustomSelect 
-          label="Temp" 
-          options={tempOptions} 
-          value={filter.tempRange} 
-          onChange={(val) => dispatch(setTempRangeFilter(val))} 
-        />
+      <div style={styles.controlsContainer}>
+        <button 
+          className="btn" 
+          onClick={() => dispatch(toggleUnits())}
+          style={styles.unitBtn}
+        >
+          Units: {units === 'metric' ? '°C' : '°F'}
+        </button>
+
+        <div className="filters-group" style={styles.group}>
+          <CustomSelect 
+            label="Type" 
+            options={weatherOptions} 
+            value={filter.weatherType} 
+            onChange={(val) => dispatch(setWeatherTypeFilter(val))} 
+          />
+          
+          <CustomSelect 
+            label="Temp" 
+            options={tempOptions} 
+            value={filter.tempRange} 
+            onChange={(val) => dispatch(setTempRangeFilter(val))} 
+          />
+        </div>
       </div>
     </div>
   );
@@ -56,11 +63,22 @@ const FilterBar = () => {
 const styles = {
   container: {
     display: 'flex',
-    justifyContent: 'flex-end',
+    justifyContent: 'space-between',
     gap: '20px',
     marginBottom: '20px',
     alignItems: 'center',
     flexWrap: 'wrap',
+  },
+  searchContainer: {
+    flex: '1',
+    minWidth: '300px',
+  },
+  controlsContainer: {
+    display: 'flex',
+    gap: '20px',
+    alignItems: 'center',
+    flexWrap: 'wrap',
+    justifyContent: 'flex-end',
   },
   group: {
     display: 'flex',
