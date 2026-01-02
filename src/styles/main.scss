@@ -60,8 +60,8 @@ body {
 
 .app-header {
   @include flex-between;
-  padding: $spacing-md 0;
-  margin-bottom: $spacing-lg;
+  padding: 0;
+  margin: -3px 0;
   flex-wrap: wrap;
   gap: $spacing-sm;
 
